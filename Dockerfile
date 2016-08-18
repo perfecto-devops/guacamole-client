@@ -15,7 +15,7 @@ RUN apt-get install libwebp-dev -y
 RUN apt-get install libjpeg62-turbo-dev -y
 RUN apt-get install openjdk-8-jdk -y
 RUN apt-get install maven git -y
-RUN mkdir /compile && cd /compile && git clone https://github.com/apache/incubator-guacamole-client.git && cd /compile/incubator-guacamole-client && git checkout 8564f05eadc89aa91bf4c36a446de54140c79ed3 && mvn install
+RUN mkdir /compile && cd /compile && git clone https://github.com/apache/incubator-guacamole-client.git && cd /compile/incubator-guacamole-client && git checkout 414f4ca94280b8ceb6b45a8e0e06dd8c37077ee1 && mvn install
 RUN mkdir -p /opt/guacamole/bin && cp /compile/incubator-guacamole-client/guacamole/target/guacamole-0.9.9-incubating.war /usr/local/tomcat/webapps/guacamole.war
 RUN mkdir /opt/guacamole/mysql && mkdir /opt/guacamole/postgresql
 RUN tar -xvzf /compile/incubator-guacamole-client/extensions/guacamole-auth-jdbc/target/guacamole-auth-jdbc-0.9.9-incubating.tar.gz -C /opt/guacamole/ --wildcards --no-anchored --strip-components=1 "*.sql"
