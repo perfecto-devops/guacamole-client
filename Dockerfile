@@ -1,4 +1,4 @@
-FROM tomcat:8.0.20-jre8
+FROM tomcat:8.5.4-jre8
 RUN apt-get update
 RUN apt-get install libcairo2-dev -y
 RUN apt-get install libpng12-0 -y
